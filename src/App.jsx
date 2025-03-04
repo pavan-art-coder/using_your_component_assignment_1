@@ -1,6 +1,7 @@
 import { useState } from 'react';
+import Bookcard from './components/bookcard';
 
-function App() {
+export default function App() {
   const books = [
     {
       id: 1,
@@ -34,7 +35,12 @@ function App() {
     },
   ];
 
-  return <>{/* write code to display all the books using */}</>;
-}
+   return(
+    <>
+    {books.map((item)=>{
+      <Bookcard key={item.id} book={item}/>
+    })}
+    </>
+   )
+  }
 
-export default App;
